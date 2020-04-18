@@ -40,11 +40,15 @@ class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
         if not digits:
             return [1]
-        if digits[-1] == 9:
-            digits = self.plusOne(digits[:-1])
-            digits.extend([0])
-        else:
-            digits[-1] += 1
-        return digits
+        len_of_digits = len(digits)
+        tail = len_of_digits - 1
+        while tail >= 0:
+            if digits[tail] == 9:
+                digits[tail] = 0
+                tail -= 1
+            else:
+                digits[tail] += 1
+                return digits
+        return [1] + [0] * len_of_digits
 # @lc code=end
 

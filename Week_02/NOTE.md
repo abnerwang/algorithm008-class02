@@ -21,7 +21,7 @@
 
    
 
-   ```python
+   ```java
    
    public void delete(int data) {
      Node p = tree; // p指向要删除的节点，初始化指向根节点
